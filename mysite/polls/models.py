@@ -15,3 +15,9 @@ class Quote(models.Model):
 
     def __str__(self):
         return self.text
+
+class Tag(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
