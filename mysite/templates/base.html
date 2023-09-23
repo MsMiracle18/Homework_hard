@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цитати</title>
+</head>
+<body>
+    <h1>Цитати</h1>
+    <ul>
+        <li><a href="{% url 'home' %}">Головна</a></li>
+        <li><a href="{% url 'authors' %}">Автори</a></li>
+        <li><a href="{% url 'quotes' %}">Цитати</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'add_author' %}">Додати автора</a></li>
+          <li><a href="{% url 'add_quote' %}">Додати цитату</a></li>
+          <li><a href="{% url 'logout' %}">Вийти</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">Вхід</a></li>
+          <li><a href="{% url 'register' %}">Реєстрація</a></li>
+        {% endif %}
+    </ul>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

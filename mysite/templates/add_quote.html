@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Додати нову цитату</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Додати цитату</button>
+  </form>
+  <p><a href="{% url 'quotes' %}">Повернутися до списку цитат</a></p>
+{% endblock %}
