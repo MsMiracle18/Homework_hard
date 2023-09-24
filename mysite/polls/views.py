@@ -38,3 +38,8 @@ def add_quote(request):
     else:
         form = QuoteForm()
     return render(request, 'quotes/add_quote.html', {'form': form})
+
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'polls/index.html')
